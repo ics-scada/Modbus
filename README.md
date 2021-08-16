@@ -9,7 +9,7 @@ Modbus is a serial communication protocol developed by Modicon published by Modi
 Modbus is an open protocol, meaning that it's free for manufacturers to build into their equipment without having to pay royalties. It has become a standard communications protocol in industry, and is now the most commonly available means of connecting industrial electronic devices. It is used widely by many manufacturers throughout many industries.Modbus is typically used to transmit signals from instrumentation and control devices back to a main controller or data gathering system, for example a system that measures temperature and humidity and communicates the results to a computer. Modbus is often used to connect a supervisory computer with a remote terminal unit (RTU) in supervisory control and data acquisition (SCADA) systems. Versions of the Modbus protocol exist for serial lines (Modbus RTU and Modbus ASCII) and for Ethernet (Modbus TCP).
 
 <p align="center">
-  <img src="https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/modbus/modbus-master-slave.jpg">
+  <img src="https://github.com/ics-scada/Modbus/blob/main/img/modbus-master-slave.jpg">
 </p>
 
 ***
@@ -26,7 +26,7 @@ However, if the process variable is bad or if the device has problems functionin
 
 
 <p align="center">
-  <img src="https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/modbus/instrumentationtools.com_modbus-scan.jpg">
+  <img src="https://github.com/ics-scada/Modbus/blob/main/img/instrumentationtools.com_modbus-scan.jpg">
 </p>
 
 
@@ -43,7 +43,7 @@ Modbus RTU is really just a small variation on the Modbus ASCII protocol. The on
 Modbus TCP/IP was added much later. One simple way of thinking about Modbus TCP/IP is to picture it as simply encapsulating a Modbus RTU packet within a TCP/IP packet. There is a bit more to it than that, but this is essentially what Modbus did. As a result, Modbus TCP/IP is also very simple to implement. The tradeoff is that, because it uses TCP/IP protocol for all messages, it is slow compared to other Ethernet industrial protocols – but still fast enough for monitoring applications.
 
 <p align="center">
-  <img src="https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/modbus/instrumentationtools.com_modbus-function-codes.jpg">
+  <img src="https://github.com/ics-scada/Modbus/blob/main/img/instrumentationtools.com_modbus-function-codes.jpg">
 </p>
 
 ##### What is the Slave ID?
@@ -81,7 +81,7 @@ Some devices are built with a fixed map that is defined by the manufacturer. Whi
 Information is stored in the Slave device in four different tables. Two tables store on/off discrete values (coils) and two store numerical values (registers). The coils and registers each have a read-only table and read-write table. Each table has 9999 values. Each coil or contact is 1 bit and assigned a data address between 0000 and 270E. Each register is 1 word = 16 bits = 2 bytes and also has data address between 0000 and 270E.
 
 <p align="center">
-  <img src="https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/modbus/servlet.jpg">
+  <img src="https://github.com/ics-scada/Modbus/blob/main/img/servlet.jpg">
 </p>
 
 Coil/Register Numbers can be thought of as location names since they do not appear in the actual messages. The Data Addresses are used in the messages. For example, the first Holding Register, number 40001, has the Data Address 0000. The difference between these two values is the offset. Each table has a different offset. 1, 10001, 30001 and 40001.
@@ -110,7 +110,7 @@ MODBUS can be used over nearly all busses and networks, however the most common 
 
 
 <p align="center">
-  <img src="https://github.com/ics-scada/Reports/blob/main/Modbus/Screenshots/modbus/MODBUS-Frame.png">
+  <img src="https://github.com/ics-scada/Modbus/blob/main/img/MODBUS-Frame.png">
 </p>
 
 The difference between MODBUS/TCP and MODBUS/RTU is mostly in the transport frames or the wrapper around the PDU.   In both forms of MODBUS, application specific addressing and error checking are attached to the PDU to make the Application Data Unit (ADU).  In MODBUS/TCP the ADU is encapsulated in a TCP packet.  The TCP protocol handles the error checking, which is why it is omitted from the MODBUS/TCP ADU.
